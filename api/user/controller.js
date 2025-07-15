@@ -6,6 +6,10 @@ export const createUser = async(req,res)=>{
         const {name,email}= req.body;
         if(!name || !email){
             return res.status(200).json({message:"All fields are required"});
+        }
+        const existing = await prisma.user.findUnique({ where: { email } });
+        if (existing) {
+          return res.status(409).json({ message: "Email already in use" });
         } 
         const user = await prisma.user.create({
             data:{
