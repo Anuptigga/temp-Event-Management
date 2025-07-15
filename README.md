@@ -16,11 +16,12 @@ This is an API for event management.
 ## Getting started
 PREREQUISITS : postgres, node.js
 ### Clone the repository 
-``` git clone https://github.com/Anuptigga/AI-chatbot-api.git```
+``` https://github.com/Anuptigga/temp-Event-Management.git```
 ### Install necessary packages
 ```bash
-cd api
+cd temp-Event-Management
 npm i
+npx prisma migrate dev
 ```
 ### Start the server
 `nodemon server.js`
